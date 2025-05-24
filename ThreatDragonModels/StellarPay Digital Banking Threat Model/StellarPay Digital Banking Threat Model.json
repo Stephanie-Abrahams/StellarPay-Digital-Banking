@@ -1,0 +1,20 @@
+{
+  "version": "2.4.1",
+  "summary": {
+    "title": "StellarPay Digital Banking Threat Model",
+    "owner": "Stephanie Abrahams",
+    "description": "StellarPay Digital Banking is a secure, web-based fintech platform enabling users to create accounts, link bank cards, manage funds, and perform real-time transactions such as sending or receiving money and paying for services. The system handles highly sensitive data and integrates with external payment gateways through APIs. This threat model uses STRIDE to identify and address potential security threats prior to deployment.",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [
+      {
+        "name": "Stephanie Abrahams DevoPs Engineer"
+      }
+    ],
+    "diagrams": [],
+    "diagramTop": 0,
+    "reviewer": "StellarPay Cybersecurity Team",
+    "threatTop": 0
+  }
+}
