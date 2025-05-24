@@ -12,8 +12,19 @@
         "name": "Stephanie Abrahams DevoPs Engineer"
       }
     ],
-    "diagrams": [],
-    "diagramTop": 0,
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "StellarPay Core Architecture",
+        "diagramType": "STRIDE",
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.4.1",
+        "cells": [],
+        "description": "This diagram illustrates the core architecture of the StellarPay digital banking platform. It includes the user-facing frontend, backend services, data stores, and external integrations with financial institutions. STRIDE will be used to identify threats across data flows and components."
+      }
+    ],
+    "diagramTop": 1,
     "reviewer": "StellarPay Cybersecurity Team",
     "threatTop": 0
   }
