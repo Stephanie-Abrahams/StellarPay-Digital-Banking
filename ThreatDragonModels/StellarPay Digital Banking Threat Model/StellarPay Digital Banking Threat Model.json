@@ -14,7 +14,7 @@
     ],
     "diagrams": [
       {
-        "id": 0,
+        "id": 1,
         "title": "StellarPay Core Architecture",
         "diagramType": "STRIDE",
         "placeholder": "New STRIDE diagram description",
@@ -24,7 +24,7 @@
         "description": "This diagram illustrates the core architecture of the StellarPay digital banking platform. It includes the user-facing frontend, backend services, data stores, and external integrations with financial institutions. STRIDE will be used to identify threats across data flows and components."
       }
     ],
-    "diagramTop": 1,
+    "diagramTop": 2,
     "reviewer": "StellarPay Cybersecurity Team",
     "threatTop": 0
   }
