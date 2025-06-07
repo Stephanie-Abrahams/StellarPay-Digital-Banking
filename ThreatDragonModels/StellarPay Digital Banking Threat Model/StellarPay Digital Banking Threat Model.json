@@ -53,7 +53,7 @@
             },
             "attrs": {
               "text": {
-                "text": "User"
+                "text": "User\nExternal Entity\nPublic"
               },
               "body": {
                 "stroke": "red",
@@ -149,7 +149,7 @@
             "zIndex": 1,
             "data": {
               "type": "tm.Actor",
-              "name": "User",
+              "name": "User\nExternal Entity\nPublic",
               "description": "End user accessing StellarPay via mobile or web ",
               "outOfScope": false,
               "reasonOutOfScope": "",
@@ -158,12 +158,12 @@
               "threats": [
                 {
                   "id": "fa9393b3-2a74-4f3f-b2e5-e58f31827f9d",
-                  "title": "Spoofing of User Identity",
+                  "title": "Social Engineering",
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Spoofing",
                   "description": "An attacker could impersonate a legitimate user to gain unauthorized access to the platform.\n",
-                  "mitigation": "Implement multi-factor authentication and monitor for unusual login behavior.\n\n",
+                  "mitigation": "Train users to detect phishing activities. \n",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 11,
@@ -171,7 +171,7 @@
                 }
               ],
               "threatFrequency": {
-                "spoofing": 3,
+                "spoofing": 4,
                 "repudiation": 0
               }
             }
@@ -568,11 +568,11 @@
             },
             "attrs": {
               "text": {
-                "text": "Authentication\nService"
+                "text": "Authentication\nService\nDMZ\nProcess"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -664,11 +664,11 @@
             "zIndex": 11,
             "data": {
               "type": "tm.Process",
-              "name": "Authentication\nService",
+              "name": "Authentication\nService\nDMZ\nProcess",
               "description": "Handles user logins,  session management and MFA",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
@@ -676,12 +676,12 @@
               "threats": [
                 {
                   "id": "d3ad4629-f090-4597-b010-23bcf5a4a870",
-                  "title": "Elevation of Privilege via Weak Session Token",
-                  "status": "Open",
+                  "title": "Token replay attack",
+                  "status": "Mitigated",
                   "severity": "High",
-                  "type": "Elevation of privilege",
+                  "type": "Spoofing",
                   "description": "A weak session token may allow attackers to escalate privileges.",
-                  "mitigation": "Use strong, signed, expiring tokens. ",
+                  "mitigation": "Use short lived tokens and validate request login",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 12,
@@ -689,7 +689,7 @@
                 }
               ],
               "threatFrequency": {
-                "spoofing": 1,
+                "spoofing": 2,
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
@@ -709,11 +709,11 @@
             },
             "attrs": {
               "text": {
-                "text": "API\nGateway"
+                "text": "API\nGateway\nDMZ/Internal\nProcess"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -804,11 +804,11 @@
             "id": "bc48fce0-e1d5-4ebd-9e13-9a57e2d99c13",
             "data": {
               "type": "tm.Process",
-              "name": "API\nGateway",
+              "name": "API\nGateway\nDMZ/Internal\nProcess",
               "description": "Encrypted API requests. Central access point for all client facing APIs",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
@@ -816,12 +816,12 @@
               "threats": [
                 {
                   "id": "d3ad4629-f090-4597-b010-23bcf5a4a870",
-                  "title": "Denial of Service via API Flooding",
-                  "status": "Open",
+                  "title": "API Abuse via DoS",
+                  "status": "Mitigated",
                   "severity": "Critical",
                   "type": "Denial of service",
                   "description": "An attacker could flood the API gateway with requests, exhausting resources.",
-                  "mitigation": "Implement rate limiting, IP throttling, and WAF protection.",
+                  "mitigation": "Apply rate-limiting and throttle abusive IPs",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 12,
@@ -833,7 +833,7 @@
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
-                "denialOfService": 1,
+                "denialOfService": 2,
                 "elevationOfPrivilege": 0
               }
             },
@@ -850,7 +850,7 @@
             },
             "attrs": {
               "text": {
-                "text": "Transaction\nProcessing\nService"
+                "text": "Transaction\nProcessing\nService\n- \nInternal\nProcess"
               },
               "body": {
                 "stroke": "red",
@@ -945,7 +945,7 @@
             "id": "c276a306-65bb-4681-b374-84975f77c183",
             "data": {
               "type": "tm.Process",
-              "name": "Transaction\nProcessing\nService",
+              "name": "Transaction\nProcessing\nService\n- \nInternal\nProcess",
               "description": "Core service that manages fund transfer, card linking etc. ",
               "outOfScope": false,
               "reasonOutOfScope": "",
@@ -957,12 +957,12 @@
               "threats": [
                 {
                   "id": "d3ad4629-f090-4597-b010-23bcf5a4a870",
-                  "title": " Tampering of Transaction Data",
+                  "title": "Fund Transfer Tampering",
                   "status": "Open",
                   "severity": "High",
                   "type": "Tampering",
                   "description": "Unauthorized modification of transaction amounts or recipient details.",
-                  "mitigation": "Use strong access controls, data validation, and transaction signing.",
+                  "mitigation": "Implement message signing and audit trails. ",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 12,
@@ -971,7 +971,7 @@
               ],
               "threatFrequency": {
                 "spoofing": 1,
-                "tampering": 2,
+                "tampering": 3,
                 "repudiation": 0,
                 "informationDisclosure": 0,
                 "denialOfService": 0,
@@ -991,11 +991,11 @@
             },
             "attrs": {
               "text": {
-                "text": "Third Party\nGateway"
+                "text": "Third Party\nGateway\nExternal Entity\nExternal\nPublic"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": "4 3"
               }
             },
@@ -1086,21 +1086,21 @@
             "id": "b4fd0987-c09e-44e0-bc86-8711fae587ec",
             "data": {
               "type": "tm.Actor",
-              "name": "Third Party\nGateway",
+              "name": "Third Party\nGateway\nExternal Entity\nExternal\nPublic",
               "description": "External API for processing card transactions.",
               "outOfScope": true,
               "reasonOutOfScope": "External API",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "providesAuthentication": false,
               "threats": [
                 {
                   "id": "fa9393b3-2a74-4f3f-b2e5-e58f31827f9d",
-                  "title": " Spoofing Payment Gateway",
-                  "status": "Open",
+                  "title": "API Spoofing",
+                  "status": "Mitigated",
                   "severity": "High",
                   "type": "Spoofing",
                   "description": "A fake payment gateway may intercept transaction data.",
-                  "mitigation": "Validate TLS certificates, use signed requests, and ensure API whitelisting.\n\n",
+                  "mitigation": "Using mTLS to validate external certificates. \n",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 11,
@@ -1108,7 +1108,7 @@
                 }
               ],
               "threatFrequency": {
-                "spoofing": 5,
+                "spoofing": 6,
                 "repudiation": 0
               }
             },
@@ -1125,7 +1125,7 @@
             },
             "attrs": {
               "text": {
-                "text": "Transaction\nProcessing\nService"
+                "text": "Transaction\nProcessing\nService \n- \nInternal\nProcess"
               },
               "body": {
                 "stroke": "red",
@@ -1220,7 +1220,7 @@
             "id": "b8445563-5e0d-4755-b23a-7ab86c6c839b",
             "data": {
               "type": "tm.Process",
-              "name": "Transaction\nProcessing\nService",
+              "name": "Transaction\nProcessing\nService \n- \nInternal\nProcess",
               "description": "Core service that manages fund transfer, card linking etc. ",
               "outOfScope": false,
               "reasonOutOfScope": "",
@@ -1266,7 +1266,7 @@
             },
             "attrs": {
               "text": {
-                "text": "Frontend"
+                "text": "Frontend - Public\nDMZ\nProcess"
               },
               "body": {
                 "stroke": "red",
@@ -1361,7 +1361,7 @@
             "id": "fd74e849-a6e7-4747-959a-24f23f914bb1",
             "data": {
               "type": "tm.Process",
-              "name": "Frontend",
+              "name": "Frontend - Public\nDMZ\nProcess",
               "description": "Client side interface for user interactions",
               "outOfScope": false,
               "reasonOutOfScope": "",
@@ -1373,12 +1373,12 @@
               "threats": [
                 {
                   "id": "d3ad4629-f090-4597-b010-23bcf5a4a870",
-                  "title": "Information Disclosure via Browser Cache",
+                  "title": "Credential leakage",
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Information disclosure",
                   "description": "Sensitive data may be stored in browser cache, accessible to other users on the same device.",
-                  "mitigation": "Set no-cache headers and avoid rendering sensitive info in HTML.",
+                  "mitigation": "Use HTTPS and avoid client side logs",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 12,
@@ -1389,7 +1389,7 @@
                 "spoofing": 2,
                 "tampering": 0,
                 "repudiation": 0,
-                "informationDisclosure": 1,
+                "informationDisclosure": 2,
                 "denialOfService": 1,
                 "elevationOfPrivilege": 0
               }
@@ -1407,16 +1407,14 @@
             },
             "attrs": {
               "text": {
-                "text": "Audit Logs"
+                "text": "Audit Logs\nData Store\nInternal"
               },
               "topLine": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -1508,11 +1506,11 @@
             "zIndex": 17,
             "data": {
               "type": "tm.Store",
-              "name": "Audit Logs",
+              "name": "Audit Logs\nData Store\nInternal",
               "description": "System Event and Transaction Logs for Traceability",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "isALog": true,
               "isEncrypted": true,
               "isSigned": false,
@@ -1521,12 +1519,12 @@
               "threats": [
                 {
                   "id": "d66849c5-a9b8-4f8b-b709-e0709f72c461",
-                  "title": "Repudiation by Tampering with Audit Logs",
-                  "status": "Open",
+                  "title": "Log tampering",
+                  "status": "Mitigated",
                   "severity": "High",
                   "type": "Repudiation",
                   "description": "Attackers may delete or modify logs to cover their tracks.",
-                  "mitigation": "Store logs in an append-only system with cryptographic integrity checks.",
+                  "mitigation": "Make logs immutable and enable digital signing.",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 13,
@@ -1535,10 +1533,130 @@
               ],
               "threatFrequency": {
                 "tampering": 0,
-                "repudiation": 1,
+                "repudiation": 2,
                 "informationDisclosure": 0,
                 "denialOfService": 0
               }
+            }
+          },
+          {
+            "position": {
+              "x": -940,
+              "y": -356
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "PUBLIC"
+              }
+            },
+            "visible": true,
+            "shape": "td-text-block",
+            "id": "da15f9a6-edb8-4efa-b27e-8a368958a1c9",
+            "zIndex": 18,
+            "data": {
+              "type": "tm.Text",
+              "name": "PUBLIC",
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": -940,
+              "y": 115
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "DMZ"
+              }
+            },
+            "visible": true,
+            "shape": "td-text-block",
+            "id": "6fdef182-92a4-4a5b-9b43-8c53bad1f638",
+            "zIndex": 19,
+            "data": {
+              "type": "tm.Text",
+              "name": "DMZ",
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": -257,
+              "y": -358
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "INTERNAL"
+              }
+            },
+            "visible": true,
+            "shape": "td-text-block",
+            "id": "986ccad6-e450-419b-858f-83a582025063",
+            "zIndex": 20,
+            "data": {
+              "type": "tm.Text",
+              "name": "INTERNAL",
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": -257,
+              "y": 230
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "INTERNAL"
+              }
+            },
+            "visible": true,
+            "shape": "td-text-block",
+            "id": "1e4f6a43-c7d7-4d05-aaa1-7d8804483174",
+            "data": {
+              "type": "tm.Text",
+              "name": "INTERNAL",
+              "hasOpenThreats": false
+            },
+            "zIndex": 21
+          },
+          {
+            "position": {
+              "x": -631,
+              "y": 340
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "DMZ"
+              }
+            },
+            "visible": true,
+            "shape": "td-text-block",
+            "id": "7491edf7-293e-437f-9f9e-16d9db0c343c",
+            "zIndex": 22,
+            "data": {
+              "type": "tm.Text",
+              "name": "DMZ",
+              "hasOpenThreats": false
             }
           }
         ],
