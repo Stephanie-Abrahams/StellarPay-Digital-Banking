@@ -32,8 +32,8 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "1c763663-d377-45f4-9fc7-cf61d5739255",
             "zIndex": -1,
+            "id": "1c763663-d377-45f4-9fc7-cf61d5739255",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Trust Boundary",
@@ -63,6 +63,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 1,
             "ports": {
               "groups": {
                 "top": {
@@ -146,7 +147,6 @@
               ]
             },
             "id": "bd6319aa-3ff9-44b6-a01b-b036da0a3e20",
-            "zIndex": 1,
             "data": {
               "type": "tm.Actor",
               "name": "User\nExternal Entity\nPublic",
@@ -578,6 +578,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 11,
             "ports": {
               "groups": {
                 "top": {
@@ -661,7 +662,6 @@
               ]
             },
             "id": "544bb1a2-bb0a-4663-a368-9bbb42ea6393",
-            "zIndex": 11,
             "data": {
               "type": "tm.Process",
               "name": "Authentication\nService\nDMZ\nProcess",
@@ -719,6 +719,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 12,
             "ports": {
               "groups": {
                 "top": {
@@ -836,8 +837,7 @@
                 "denialOfService": 2,
                 "elevationOfPrivilege": 0
               }
-            },
-            "zIndex": 12
+            }
           },
           {
             "position": {
@@ -860,6 +860,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 13,
             "ports": {
               "groups": {
                 "top": {
@@ -977,8 +978,7 @@
                 "denialOfService": 0,
                 "elevationOfPrivilege": 0
               }
-            },
-            "zIndex": 13
+            }
           },
           {
             "position": {
@@ -1001,6 +1001,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 14,
             "ports": {
               "groups": {
                 "top": {
@@ -1111,8 +1112,7 @@
                 "spoofing": 6,
                 "repudiation": 0
               }
-            },
-            "zIndex": 14
+            }
           },
           {
             "position": {
@@ -1135,6 +1135,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 15,
             "ports": {
               "groups": {
                 "top": {
@@ -1252,8 +1253,7 @@
                 "denialOfService": 0,
                 "elevationOfPrivilege": 0
               }
-            },
-            "zIndex": 15
+            }
           },
           {
             "position": {
@@ -1276,6 +1276,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 16,
             "ports": {
               "groups": {
                 "top": {
@@ -1393,8 +1394,7 @@
                 "denialOfService": 1,
                 "elevationOfPrivilege": 0
               }
-            },
-            "zIndex": 16
+            }
           },
           {
             "position": {
@@ -1420,6 +1420,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 17,
             "ports": {
               "groups": {
                 "top": {
@@ -1503,7 +1504,6 @@
               ]
             },
             "id": "14e7b114-da86-495d-a558-c0c42ef79fdd",
-            "zIndex": 17,
             "data": {
               "type": "tm.Store",
               "name": "Audit Logs\nData Store\nInternal",
@@ -1555,8 +1555,8 @@
             },
             "visible": true,
             "shape": "td-text-block",
-            "id": "da15f9a6-edb8-4efa-b27e-8a368958a1c9",
             "zIndex": 18,
+            "id": "da15f9a6-edb8-4efa-b27e-8a368958a1c9",
             "data": {
               "type": "tm.Text",
               "name": "PUBLIC",
@@ -1579,8 +1579,8 @@
             },
             "visible": true,
             "shape": "td-text-block",
-            "id": "6fdef182-92a4-4a5b-9b43-8c53bad1f638",
             "zIndex": 19,
+            "id": "6fdef182-92a4-4a5b-9b43-8c53bad1f638",
             "data": {
               "type": "tm.Text",
               "name": "DMZ",
@@ -1603,8 +1603,8 @@
             },
             "visible": true,
             "shape": "td-text-block",
-            "id": "986ccad6-e450-419b-858f-83a582025063",
             "zIndex": 20,
+            "id": "986ccad6-e450-419b-858f-83a582025063",
             "data": {
               "type": "tm.Text",
               "name": "INTERNAL",
@@ -1627,13 +1627,13 @@
             },
             "visible": true,
             "shape": "td-text-block",
+            "zIndex": 21,
             "id": "1e4f6a43-c7d7-4d05-aaa1-7d8804483174",
             "data": {
               "type": "tm.Text",
               "name": "INTERNAL",
               "hasOpenThreats": false
-            },
-            "zIndex": 21
+            }
           },
           {
             "position": {
@@ -1651,8 +1651,8 @@
             },
             "visible": true,
             "shape": "td-text-block",
-            "id": "7491edf7-293e-437f-9f9e-16d9db0c343c",
             "zIndex": 22,
+            "id": "7491edf7-293e-437f-9f9e-16d9db0c343c",
             "data": {
               "type": "tm.Text",
               "name": "DMZ",
